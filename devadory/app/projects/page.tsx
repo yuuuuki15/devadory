@@ -1,8 +1,10 @@
+// app/projects/page.tsx
 'use client';
 
 import { useEffect, useState } from 'react';
 import Parse from 'parse';
 import { useRouter } from 'next/navigation';
+import { useAuth } from '@/hooks/useAuth';
 
 interface Project {
     id: string;
@@ -13,11 +15,12 @@ interface Project {
     owner: Parse.User;
 }
 
-export default function Home() {
+export default function ProjectsPage() {
     const router = useRouter();
     const [projects, setProjects] = useState<Project[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+    const { isLoading } = useAuth(true);
 
     useEffect(() => {
         const fetchProjects = async () => {
@@ -56,7 +59,7 @@ export default function Home() {
         fetchProjects();
     }, []);
 
-    if (loading) {
+    if (isLoading) {
         return (
             <div className="flex min-h-screen items-center justify-center">
                 <div className="text-gray-300">Loading...</div>
@@ -103,7 +106,7 @@ export default function Home() {
                                 </th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody className="">
                             {projects.map((project) => (
                                 <tr
                                     key={project.id}
@@ -111,7 +114,7 @@ export default function Home() {
                                     className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 h-10 text-center hover:bg-indigo-500/10 cursor-pointer transition-all duration-200"
                                 >
                                     <td className="px-6 py-4 text-left">
-                                        <div className="text-gray-300">
+                                        <div className="">
                                             {project.name}
                                         </div>
                                     </td>
@@ -125,12 +128,12 @@ export default function Home() {
                                         </span>
                                     </td>
                                     <td className="px-6 py-4">
-                                        <div className="text-gray-300">
+                                        <div className="">
                                             {project.owner.get('username')}
                                         </div>
                                     </td>
                                     <td className="px-6 py-4">
-                                        <div className="text-gray-300">
+                                        <div className="">
                                             {new Date(project.dueDate).toLocaleDateString()}
                                         </div>
                                     </td>

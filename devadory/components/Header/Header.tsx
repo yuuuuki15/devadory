@@ -14,20 +14,20 @@ export default function Header() {
         const currentUser = Parse.User.current();
         if (currentUser) {
             setUsername(currentUser.get('username'));
+        } else {
+            setUsername(null);
         }
 
-        // Check user state periodically
-        const interval = setInterval(() => {
-            const user = Parse.User.current();
-            if (user) {
-                setUsername(user.get('username'));
-            } else {
-                setUsername(null);
-            }
-        }, 1000); // Check every second
+        // const interval = setInterval(() => {
+        //     const user = Parse.User.current();
+        //     if (user) {
+        //         setUsername(user.get('username'));
+        //     } else {
+        //         setUsername(null);
+        //     }
+        // }, 1000);
 
-        // Cleanup interval on unmount
-        return () => clearInterval(interval);
+        // return () => clearInterval(interval);
     }, []);
 
     return (
@@ -39,19 +39,20 @@ export default function Header() {
                             Devadory
                         </a>
                     </div>
-
                     <div className="flex items-center gap-x-6">
                         {username ? (
-                            <span className="text-sm text-gray-300">
-                                welcome {username}
-                            </span>
+                            <div className="flex items-center gap-x-6">
+                                <div><a href="/projects">Projects</a></div>
+                                <div><a href="/logout">Logout</a></div>
+                                <span className="text-sm text-gray-300">
+                                    welcome {username}
+                                </span>
+                            </div>
                         ) : (
-                            <a
-                                href="/login"
-                                className="text-sm font-semibold text-indigo-600 hover:text-indigo-500"
-                            >
-                                Sign in
-                            </a>
+                            <div className="flex items-center gap-x-6">
+                                <div><a href="/login">Sign in</a></div>
+                                <div><a href="/signup">Sign up</a></div>
+                            </div>
                         )}
                     </div>
                 </div>
