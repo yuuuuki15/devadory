@@ -24,7 +24,7 @@ git clone git@github.com:yuuuuki15/devadory.git devadory
 cd devadory
 ```
 
-2. Create a `.env.local` file in the root directory with the following variables:
+2. Create a `.env.local` file in the devadory directory with the following variables:
 ```env
 NEXT_PUBLIC_PARSE_APP_ID=your_parse_app_id
 NEXT_PUBLIC_PARSE_SERVER_URL=your_parse_server_url
@@ -39,4 +39,7 @@ make
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Project Structure
+
+## If it doesn't work?
+- check if you put `.env.local` file inside devadory directory.
+- check if your node version is more than 20.0.0
