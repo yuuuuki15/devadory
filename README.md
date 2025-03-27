@@ -12,7 +12,7 @@ A modern project management application built with Next.js, TypeScript, and Pars
 
 ## Prerequisites
 
-- Node.js 18.0.0 or later
+- Node.js 20.0.0 or later
 - npm or yarn
 - Parse Server instance
 
@@ -20,8 +20,8 @@ A modern project management application built with Next.js, TypeScript, and Pars
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/devadory.git
-cd devadory
+git clone git@github.com:yuuuuki15/devadory.git devadory
+cd devadory/devadory
 ```
 
 2. Install dependencies:
