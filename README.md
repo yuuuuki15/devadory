@@ -21,29 +21,21 @@ A modern project management application built with Next.js, TypeScript, and Pars
 1. Clone the repository:
 ```bash
 git clone git@github.com:yuuuuki15/devadory.git devadory
-cd devadory/devadory
+cd devadory
 ```
 
-2. Install dependencies:
-```bash
-npm install
-# or
-yarn install
-```
-
-3. Create a `.env.local` file in the root directory with the following variables:
+2. Create a `.env.local` file in the root directory with the following variables:
 ```env
 NEXT_PUBLIC_PARSE_APP_ID=your_parse_app_id
 NEXT_PUBLIC_PARSE_SERVER_URL=your_parse_server_url
 NEXT_PUBLIC_PARSE_JS_KEY=your_parse_js_key
 ```
 
-4. Run the development server:
+4. make project
 ```bash
-npm run dev
-# or
-yarn dev
+make
 ```
+
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
