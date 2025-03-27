@@ -15,13 +15,12 @@ export const signUp = async (username: string, email: string, password: string) 
   }
 };
 
-export const logIn = async (username: string, password: string) => {
-  try {
-    const user = await Parse.User.logIn(username, password);
-    return user;
-  } catch (error) {
-    throw error;
-  }
+export const logIn = async (email: string, password: string) => {
+    try {
+        await Parse.User.logIn(email, password);
+    } catch (error) {
+        throw error;
+    }
 };
 
 export const logOut = async () => {
