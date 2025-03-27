@@ -1,0 +1,50 @@
+# Devadory - Project Management Application
+
+A modern project management application built with Next.js, TypeScript, and Parse Server.
+
+## Features
+
+- User Authentication (Sign up, Login, Logout)
+- Project Management (Create, Read, Update, Delete)
+- Modern UI with Tailwind CSS
+- TypeScript for type safety
+- Parse Server for backend services
+
+## Prerequisites
+
+- Node.js 18.0.0 or later
+- npm or yarn
+- Parse Server instance
+
+## Getting Started
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/devadory.git
+cd devadory
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Create a `.env.local` file in the root directory with the following variables:
+```env
+NEXT_PUBLIC_PARSE_APP_ID=your_parse_app_id
+NEXT_PUBLIC_PARSE_SERVER_URL=your_parse_server_url
+NEXT_PUBLIC_PARSE_JS_KEY=your_parse_js_key
+```
+
+4. Run the development server:
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Project Structure
